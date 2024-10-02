@@ -6,8 +6,8 @@ class DepartmentsController < ApplicationController
   end
 
   def show
-    the_id = params.fetch("path_id")
-    @department = Department.where({:id => the_id })
+    @the_id = params.fetch("path_id")
+    @department = Department.find_by({:id => @the_id })
 
     render({ :template => "departments/show" })
   end
